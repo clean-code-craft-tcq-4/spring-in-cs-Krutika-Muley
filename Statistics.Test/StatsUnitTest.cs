@@ -25,9 +25,9 @@ namespace Statistics.Test
             statsComputer.CalculateStatistics(
                 new List<float>{});
    
-            Assert.IsNaN(statsComputer.average);
-            Assert.IsNaN(statsComputer.max);
-            Assert.IsNaN(statsComputer.min);
+            Assert.Equal(statsComputer.average, Double.NaN);
+            Assert.Equal(statsComputer.max, Double.NaN);
+            Assert.Equal(statsComputer.min, Double.NaN);
             
         }
         [Fact]
