@@ -30,6 +30,8 @@ namespace Statistics
                 average = sum / numbersArray.Length;
             }
         }
-        
+        public double average;
+        public double min;
+        public double max;
     }
 }
