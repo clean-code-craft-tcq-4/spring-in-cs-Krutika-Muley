@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Statistics;
+using System.Collections.Generic;
 
 namespace Statistics.Test
 {
@@ -22,7 +23,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             statsComputer.CalculateStatistics(
-                new List<float>{});
+                new List<___>{});
    
             Assert.IsNaN(statsComputer.average);
             Assert.IsNaN(statsComputer.max);
