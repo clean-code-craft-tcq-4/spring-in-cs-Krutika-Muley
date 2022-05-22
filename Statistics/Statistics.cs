@@ -34,4 +34,32 @@ namespace Statistics
         public double min;
         public double max;
     }
+    
+        public class StatsAlerter
+    {
+        StatsAlerter(float maxThreshold, IAlerter[] alerters)
+        {
+            threshold = maxThreshold;
+            alerters1 = alerters;
+        }
+            public void checkAndAlert(List<float> numbers)
+       {
+            var numbersArray = numbers.ToArray();
+            max = numbersArray[0];
+            for (int i = 1; i < numbersArray.Length; i++)
+            {
+                max = Math.Max(max, numbersArray[i]);
+                if (max > threshold)
+               {
+                  alerters1[0].emailSent = true;
+                  alerters1[1].ledglows = true;
+                   break;
+               }
+            }
+
+
+        }
+        float threshold;
+        float max;
+        IAlerter[] alerters1;
 }
