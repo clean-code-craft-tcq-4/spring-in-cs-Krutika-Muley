@@ -62,4 +62,6 @@ namespace Statistics
         float threshold;
         float max;
         IAlerter[] alerters1;
+            
+     }
 }
