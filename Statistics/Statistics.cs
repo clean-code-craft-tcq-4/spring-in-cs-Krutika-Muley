@@ -35,8 +35,9 @@ namespace Statistics
         public double max;
     }
     
-        public class StatsAlerter
+   public class StatsAlerter
     {
+
         StatsAlerter(float maxThreshold, IAlerter[] alerters)
         {
             threshold = maxThreshold;
@@ -50,18 +51,44 @@ namespace Statistics
             {
                 max = Math.Max(max, numbersArray[i]);
                 if (max > threshold)
-               {
-                  alerters1[0].emailSent = true;
-                  alerters1[1].ledglows = true;
-                   break;
-               }
-            }
-
+                {
+                    alerters1[0].Alerter();
+                    alerters1[1].Alerter();
+                    break;
+                }
+         }
 
         }
+
+
         float threshold;
         float max;
         IAlerter[] alerters1;
-            
-     }
+
+
+    }
+
+    interface IAlerter
+    {
+        void Alerter();
+    }
+
+    public class EmailAlert : IAlerter
+    {
+        public bool emailSent { get; set; }
+        public void Alerter()
+        {
+            emailSent = true;
+        }
+    }
+
+    public class LEDAlert : IAlerter
+    {
+        public bool ledGlows { get; set; }
+        public void Alerter()
+        {
+            ledGlows = true;
+        }
+
+    }
 }
