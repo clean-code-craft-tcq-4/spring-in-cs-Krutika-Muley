@@ -38,7 +38,7 @@ namespace Statistics
    public class StatsAlerter
     {
 
-        StatsAlerter(float maxThreshold, IAlerter[] alerters)
+       public StatsAlerter(float maxThreshold, IAlerter[] alerters)
         {
             threshold = maxThreshold;
             alerters1 = alerters;
