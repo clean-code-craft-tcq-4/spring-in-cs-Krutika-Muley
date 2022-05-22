@@ -68,7 +68,7 @@ namespace Statistics
 
     }
 
-    interface IAlerter
+    public interface IAlerter
     {
         void Alerter();
     }
